@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie App - Watch Silo</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN untuk Ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-red-600 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="flex flex-wrap items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+    <div class="flex items-center space-x-6 text-sm font-medium">
+      <a href="home.html" class="text-gray-300 hover:text-white transition">Home</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Genre</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Country</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="relative my-2 sm:my-0 w-full sm:w-80">
+      <input type="text" placeholder="Search movies..." class="w-full bg-white text-black pl-4 pr-10 py-1.5 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-red-600" />
+      <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gray-500 text-sm"></i>
+    </div>
+
+    <div class="flex items-center space-x-6 text-sm font-medium">
+      <a href="watch.html" class="text-red-600 border-b-2 border-red-600 pb-1">Movies</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Series</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Animation</a>
+      <a href="#" class="text-gray-300 hover:text-white transition"><i class="fa-regular fa-user mr-1"></i> Login/Signup</a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 py-6 space-y-8">
+
+    <!-- Video Player Container -->
+    <section class="w-full bg-black rounded-xl overflow-hidden shadow-2xl relative border border-gray-800">
+      <div class="relative aspect-video w-full flex items-center justify-center bg-gray-900">
+        <!-- Thumbnail Backdrop Video -->
+        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover opacity-60" alt="Video Player Preview" />
+        
+        <!-- Center Play Overlay Button -->
+        <button class="absolute w-16 h-16 bg-red-600/90 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition transform hover:scale-110 shadow-lg">
+          <i class="fa-solid fa-play text-2xl ml-1"></i>
+        </button>
+
+        <!-- Custom Video Controls Overlay -->
+        <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col space-y-2">
+          <!-- Progress Bar -->
+          <div class="relative w-full h-1.5 bg-gray-600 rounded cursor-pointer overflow-hidden">
+            <div class="w-1/3 h-full bg-red-600"></div>
+          </div>
+          <!-- Control Buttons -->
+          <div class="flex items-center justify-between text-xs text-gray-300 pt-1">
+            <div class="flex items-center space-x-4">
+              <button class="hover:text-white"><i class="fa-solid fa-play"></i></button>
+              <span>00:00 / 50:00</span>
+              <button class="hover:text-white"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button class="hover:text-white"><i class="fa-solid fa-closed-captioning"></i></button>
+              <button class="hover:text-white"><i class="fa-solid fa-gear"></i></button>
+              <button class="hover:text-white"><i class="fa-solid fa-expand"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Movie Details Section -->
+    <section class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+      <!-- Poster -->
+      <div class="md:col-span-1">
+        <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=500&q=80" class="w-full rounded-xl shadow-lg border border-gray-800" alt="Silo Poster" />
+      </div>
+
+      <!-- Information -->
+      <div class="md:col-span-3 space-y-4">
+        <div class="flex items-center justify-between">
+          <h1 class="text-3xl font-extrabold text-white">Silo</h1>
+          <button class="bg-red-600 hover:bg-red-700 text-white text-xs font-semibold px-4 py-2 rounded-full transition flex items-center gap-1.5">
+            <i class="fa-solid fa-plus"></i> Add to favourite
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-3 text-xs">
+          <span class="bg-gray-800 px-3 py-1 rounded-full text-gray-300">Drama</span>
+          <span class="bg-gray-800 px-3 py-1 rounded-full text-gray-300">Science Fiction</span>
+          <span class="text-gray-400"><i class="fa-regular fa-calendar mr-1"></i>2023</span>
+          <span class="text-gray-400"><i class="fa-regular fa-clock mr-1"></i>50:00</span>
+          <span class="text-yellow-400"><i class="fa-solid fa-star mr-1"></i>8.9</span>
+        </div>
+
+        <p class="text-gray-300 text-sm leading-relaxed">
+          In a ruined and toxic future, a community exists in a giant underground silo that plunges hundreds of stories deep. There, men and women live in a society full of regulations they believe are meant to protect them.
+        </p>
+
+        <!-- Meta info Table -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 text-xs text-gray-400 pt-2 border-t border-gray-800">
+          <div><span class="text-gray-500 w-24 inline-block">Country:</span> <span class="text-gray-200">United States</span></div>
+          <div><span class="text-gray-500 w-24 inline-block">Genre:</span> <span class="text-gray-200">Drama, Science Fiction</span></div>
+          <div><span class="text-gray-500 w-24 inline-block">Date Release:</span> <span class="text-gray-200">May 05, 2023</span></div>
+          <div><span class="text-gray-500 w-24 inline-block">Production:</span> <span class="text-gray-200">AMC Studios</span></div>
+          <div class="sm:col-span-2 flex"><span class="text-gray-500 w-24 flex-shrink-0">Cast:</span> <span class="text-gray-200">Tim Robbins, Rebecca Ferguson, Avi Nash, Rashida Jones, David Oyelowo, Harriet Walter</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Season & Episodes Selector -->
+    <section class="space-y-4">
+      <div class="inline-block relative">
+        <button class="bg-gray-900 border border-gray-800 px-4 py-2 rounded-lg text-sm font-semibold flex items-center space-x-2 hover:border-gray-700">
+          <span>Season 1</span>
+          <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+        </button>
+      </div>
+
+      <!-- Episode Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button class="bg-red-600 text-white font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 shadow">
+          <i class="fa-solid fa-play"></i>
+          <span>Episode 1: Freedom Day</span>
+        </button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 border border-gray-700/50">
+          <i class="fa-solid fa-play text-gray-500"></i>
+          <span>Episode 4: Truth</span>
+        </button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 border border-gray-700/50">
+          <i class="fa-solid fa-play text-gray-500"></i>
+          <span>Episode 2: Holston's Pick</span>
+        </button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 border border-gray-700/50">
+          <i class="fa-solid fa-play text-gray-500"></i>
+          <span>Episode 5: The Janitor's Boy</span>
+        </button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 border border-gray-700/50">
+          <i class="fa-solid fa-play text-gray-500"></i>
+          <span>Episode 3: Machines</span>
+        </button>
+        <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-medium p-3 rounded-lg text-xs text-left flex items-center justify-start space-x-2 border border-gray-700/50">
+          <i class="fa-solid fa-play text-gray-500"></i>
+          <span>Episode 6: The Relic</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- You May Also Like -->
+    <section>
+      <h2 class="text-xl font-bold mb-4">You may also like</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Item 1 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Black Knight" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Black Knight</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span>Season 1</span>
+          </div>
+        </a>
+        <!-- Item 2 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Drops of God" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Drops of God</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span>Season 1</span>
+          </div>
+        </a>
+        <!-- Item 3 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Scoop" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Scoop</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span>Season 1</span>
+          </div>
+        </a>
+        <!-- Item 4 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="The Prank Panel" />
+          </div>
+          <h4 class="font-bold text-sm truncate">The Prank Panel</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span>Season 1</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="space-y-6 pt-4 border-t border-gray-800">
+      <h3 class="text-lg font-bold">Comments</h3>
+
+      <!-- Input Comment -->
+      <div class="flex space-x-3">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80" class="w-10 h-10 rounded-full border border-gray-700" alt="Avatar" />
+        <div class="flex-1">
+          <textarea placeholder="Write your comments here..." class="w-full bg-white text-black p-3 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-red-600 h-20 resize-none"></textarea>
+        </div>
+      </div>
+
+      <!-- Comment List -->
+      <div class="space-y-4 pt-2">
+        <!-- Comment 1 -->
+        <div class="flex space-x-3">
+          <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=100&q=80" class="w-10 h-10 rounded-full" alt="User 1" />
+          <div class="text-xs space-y-1">
+            <p class="font-bold text-white">Anonym <span class="text-gray-500 font-normal ml-2">01/06/2023</span></p>
+            <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="flex items-center space-x-3 text-gray-400 pt-1">
+              <button class="hover:text-white"><i class="fa-regular fa-thumbs-up mr-1"></i> 2</button>
+              <button class="hover:text-white"><i class="fa-regular fa-thumbs-down"></i></button>
+              <button class="hover:text-white font-semibold">Reply</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="flex space-x-3">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" class="w-10 h-10 rounded-full" alt="User 2" />
+          <div class="text-xs space-y-1">
+            <p class="font-bold text-white">Jane Doe <span class="text-gray-500 font-normal ml-2">01/06/2023</span></p>
+            <p class="text-gray-300">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="flex items-center space-x-3 text-gray-400 pt-1">
+              <button class="hover:text-white"><i class="fa-regular fa-thumbs-up mr-1"></i> 5</button>
+              <button class="hover:text-white"><i class="fa-regular fa-thumbs-down"></i></button>
+              <button class="hover:text-white font-semibold">Reply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-black/90 border-t border-gray-800 text-center py-6 text-gray-500 text-xs mt-12">
+    <p>&copy; 2026 Movie UI Project - Built with Tailwind CSS</p>
+  </footer>
+
+</body>
+</html>

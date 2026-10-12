@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie App - Home</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN untuk Ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-red-600 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <nav class="flex flex-wrap items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800">
+    <div class="flex items-center space-x-6 text-sm font-medium">
+      <a href="home.html" class="text-red-600 border-b-2 border-red-600 pb-1">Home</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Genre</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Country</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="relative my-2 sm:my-0 w-full sm:w-80">
+      <input type="text" placeholder="Search movies..." class="w-full bg-white text-black pl-4 pr-10 py-1.5 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-red-600" />
+      <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gray-500 text-sm"></i>
+    </div>
+
+    <div class="flex items-center space-x-6 text-sm font-medium">
+      <a href="watch.html" class="text-gray-300 hover:text-white transition">Movies</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Series</a>
+      <a href="#" class="text-gray-300 hover:text-white transition">Animation</a>
+      <a href="#" class="text-gray-300 hover:text-white transition"><i class="fa-regular fa-user mr-1"></i> Login/Signup</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section / Featured Movie Banner -->
+  <section class="relative w-full h-[500px] md:h-[600px] bg-cover bg-center" style="background-image: linear-gradient(to top, #0d0d0d, transparent 50%), linear-gradient(to right, rgba(0,0,0,0.8), transparent), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80');">
+    <div class="max-w-7xl mx-auto h-full flex flex-col justify-end pb-12 px-6">
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-4 mb-6">
+        <a href="watch.html" class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2.5 rounded-full flex items-center space-x-2 transition shadow-lg shadow-red-600/30">
+          <span>Watch Now</span>
+          <i class="fa-solid fa-circle-play"></i>
+        </a>
+        <button class="bg-gray-800/80 hover:bg-gray-700 text-white font-semibold px-6 py-2.5 rounded-full flex items-center space-x-2 transition border border-gray-600">
+          <span>Watch Later</span>
+          <i class="fa-regular fa-bookmark"></i>
+        </button>
+      </div>
+
+      <!-- Title & Tags -->
+      <h1 class="text-3xl md:text-5xl font-extrabold mb-3">Avatar: The Way of Water</h1>
+      <div class="flex flex-wrap items-center gap-2 mb-4 text-xs font-semibold">
+        <span class="bg-cyan-600/80 px-3 py-1 rounded-full">#Action</span>
+        <span class="bg-blue-600/80 px-3 py-1 rounded-full">Adventure</span>
+        <span class="bg-indigo-600/80 px-3 py-1 rounded-full">Science Fiction</span>
+        <span class="text-gray-300 ml-2"><i class="fa-regular fa-calendar mr-1"></i>2022</span>
+        <span class="text-gray-300 ml-2"><i class="fa-regular fa-clock mr-1"></i>3:12:00</span>
+        <span class="text-yellow-400 ml-2"><i class="fa-solid fa-star mr-1"></i>8.5</span>
+      </div>
+
+      <!-- Description -->
+      <p class="text-gray-300 text-sm max-w-2xl line-clamp-3 mb-6">
+        Set more than a decade after the events of the first film, learn the story of the Sully family, the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive, and the tragedies they endure.
+      </p>
+
+      <!-- Carousel Indicators -->
+      <div class="flex space-x-2">
+        <span class="w-8 h-2 bg-red-600 rounded-full"></span>
+        <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+        <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+        <span class="w-2 h-2 bg-gray-500 rounded-full"></span>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 py-8 space-y-12">
+
+    <!-- Recently Updated -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold flex items-center gap-2">Recently Updated</h2>
+      </div>
+      <div class="flex items-center space-x-4 overflow-x-auto pb-2 scrollbar-hide">
+        <!-- Item 1 -->
+        <div class="flex-none bg-gray-900 border border-gray-800 p-2 rounded-xl flex items-center space-x-3 w-56">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=150&q=80" class="w-12 h-16 object-cover rounded-lg" alt="Poster" />
+          <div class="text-xs">
+            <h4 class="font-bold text-white truncate w-32">The Flash</h4>
+            <p class="text-gray-400">Series / Ep 9</p>
+            <p class="text-gray-500">11/05/23</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex-none bg-gray-900 border border-gray-800 p-2 rounded-xl flex items-center space-x-3 w-56">
+          <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=150&q=80" class="w-12 h-16 object-cover rounded-lg" alt="Poster" />
+          <div class="text-xs">
+            <h4 class="font-bold text-white truncate w-32">Futurama</h4>
+            <p class="text-gray-400">Series / Ep 8</p>
+            <p class="text-gray-500">11/05/23</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex-none bg-gray-900 border border-gray-800 p-2 rounded-xl flex items-center space-x-3 w-56">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" class="w-12 h-16 object-cover rounded-lg" alt="Poster" />
+          <div class="text-xs">
+            <h4 class="font-bold text-white truncate w-32">Manifest</h4>
+            <p class="text-gray-400">Series / Ep 12</p>
+            <p class="text-gray-500">11/05/23</p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="flex-none bg-gray-900 border border-gray-800 p-2 rounded-xl flex items-center space-x-3 w-56">
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=150&q=80" class="w-12 h-16 object-cover rounded-lg" alt="Poster" />
+          <div class="text-xs">
+            <h4 class="font-bold text-white truncate w-32">Silo</h4>
+            <p class="text-gray-400">Series / Ep 10</p>
+            <p class="text-gray-500">11/05/23</p>
+          </div>
+        </div>
+        <!-- Next Button -->
+        <button class="flex-none w-10 h-10 rounded-full bg-gray-200 text-black flex items-center justify-center hover:bg-white transition">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold">Trending</h2>
+        <a href="#" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">View all <i class="fa-solid fa-angle-right"></i></a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="relative group rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+          <div class="relative h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1568876694728-451bbf694b83?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Medellin" />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <a href="watch.html" class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition"><i class="fa-solid fa-play text-xl ml-0.5"></i></a>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <h3 class="font-bold text-base">Medellin</h3>
+            <div class="flex space-x-1">
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Action</span>
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Comedy</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="relative group rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+          <div class="relative h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Fast X" />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <a href="watch.html" class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition"><i class="fa-solid fa-play text-xl ml-0.5"></i></a>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <h3 class="font-bold text-base">Fast X</h3>
+            <div class="flex space-x-1">
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Action</span>
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Crime</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="relative group rounded-xl overflow-hidden bg-gray-900 border border-gray-800">
+          <div class="relative h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="The Black Demon" />
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <a href="watch.html" class="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center text-red-600 hover:scale-110 transition"><i class="fa-solid fa-play text-xl ml-0.5"></i></a>
+            </div>
+          </div>
+          <div class="p-4 flex items-center justify-between">
+            <h3 class="font-bold text-base">The Black Demon</h3>
+            <div class="flex space-x-1">
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Horror</span>
+              <span class="bg-red-600 text-[10px] px-2 py-0.5 rounded font-semibold">Thriller</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Release - Movies -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-bold">New Release - Movies</h2>
+        <a href="#" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Movie 1 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Ghosted" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Ghosted</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span><i class="fa-regular fa-clock mr-1"></i>2:00:00</span>
+          </div>
+        </a>
+        <!-- Movie 2 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="John Wick 4" />
+          </div>
+          <h4 class="font-bold text-sm truncate">John Wick: Chapter 4</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span><i class="fa-regular fa-clock mr-1"></i>2:49:00</span>
+          </div>
+        </a>
+        <!-- Movie 3 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="Guardians Vol 3" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Guardians of the Galaxy Vol. 3</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span><i class="fa-regular fa-clock mr-1"></i>2:30:00</span>
+          </div>
+        </a>
+        <!-- Movie 4 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="The Covenant" />
+          </div>
+          <h4 class="font-bold text-sm truncate">The Covenant</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span><i class="fa-regular fa-clock mr-1"></i>2:03:00</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Recommended -->
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center space-x-4">
+          <h2 class="text-xl font-bold">Recommended</h2>
+          <div class="flex space-x-2 text-xs">
+            <button class="bg-red-600 text-white px-3 py-1 rounded-full">Movies</button>
+            <button class="bg-gray-800 text-gray-300 hover:text-white px-3 py-1 rounded-full">Series</button>
+            <button class="bg-gray-800 text-gray-300 hover:text-white px-3 py-1 rounded-full">Animation</button>
+          </div>
+        </div>
+        <a href="#" class="text-xs text-gray-400 hover:text-white flex items-center gap-1">View all <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <!-- Item 1 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Robots" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Robots</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded font-bold">CAM</span>
+            <span><i class="fa-regular fa-clock mr-1"></i>1:33:00</span>
+          </div>
+        </a>
+        <!-- Item 2 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Love Again" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Love Again</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded font-bold">CAM</span>
+            <span><i class="fa-regular fa-clock mr-1">1:44:00</i></span>
+          </div>
+        </a>
+        <!-- Item 3 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1568876694728-451bbf694b83?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Hypnotic" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Hypnotic</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-orange-600 text-white px-1.5 py-0.5 rounded font-bold">CAM</span>
+            <span><i class="fa-regular fa-clock mr-1">1:33:00</i></span>
+          </div>
+        </a>
+        <!-- Item 4 -->
+        <a href="watch.html" class="group">
+          <div class="rounded-lg overflow-hidden bg-gray-900 aspect-[2/3] relative mb-2">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Paint" />
+          </div>
+          <h4 class="font-bold text-sm truncate">Paint</h4>
+          <div class="flex items-center space-x-2 text-[10px] text-gray-400 mt-1">
+            <span class="bg-red-600 text-white px-1.5 py-0.5 rounded font-bold">HD</span>
+            <span><i class="fa-regular fa-clock mr-1">1:36:00</i></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-black/90 border-t border-gray-800 text-center py-6 text-gray-500 text-xs">
+    <p>&copy; 2026 Movie UI Project - Built with Tailwind CSS</p>
+  </footer>
+
+</body>
+</html>
